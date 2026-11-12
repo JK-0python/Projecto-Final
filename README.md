@@ -19,3 +19,7 @@ por las actividades humanas.
 Quien Lo Usa:
 
 Todo el mundo lo puede usar pero la mayoria de gente que lo usara son la gente que se dedica a cuidar el planeta como ambientalistas etc.
+#
+Como Ayuda Esto?
+
+Esto ayuda porque la gente que use el bot puede ver como ayudar/cuidar el planeta.
