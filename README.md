@@ -23,3 +23,7 @@ Todo el mundo lo puede usar pero la mayoria de gente que lo usara son la gente q
 Como Ayuda Esto?
 
 Esto ayuda porque la gente que use el bot puede ver como ayudar/cuidar el planeta.
+#
+Programa:
+
+El programa va a ser programado en python con las librerias de discord.
