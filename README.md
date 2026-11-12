@@ -16,3 +16,6 @@ Bot:🌍 Dato curioso: Los últimos 10 años han sido los más cálidos registra
 por las actividades humanas.
 
 #
+Quien Lo Usa:
+
+Todo el mundo lo puede usar pero la mayoria de gente que lo usara son la gente que se dedica a cuidar el planeta como ambientalistas etc.
