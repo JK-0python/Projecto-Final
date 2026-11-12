@@ -11,5 +11,8 @@ El usuario va a poder poner un comando en discord y el bot le va a responder dep
 #
 Ejemplo:
 User: $climate_change_fact
-Bot:🌍 Dato curioso: Los últimos 10 años han sido los más cálidos registrados en la historia, debido principalmente al calentamiento global causado por las actividades humanas.
+
+Bot:🌍 Dato curioso: Los últimos 10 años han sido los más cálidos registrados en la historia, debido principalmente al calentamiento global causado 
+por las actividades humanas.
+
 #
