@@ -1,0 +1,139 @@
+import discord
+from discord.ext import commands
+import random
+
+# Configuración del bot
+intents = discord.Intents.default()
+intents.message_content = True
+
+client = commands.Bot(command_prefix="!", intents=intents)
+
+# Lista de datos curiosos
+lista_1 = [
+    "La Tierra se está calentando debido al aumento de gases de efecto invernadero.",
+    "El dióxido de carbono es uno de los principales gases que causan el calentamiento global.",
+    "Los océanos absorben gran parte del calor adicional del planeta.",
+    "El hielo de los polos se está derritiendo.",
+    "El nivel del mar está aumentando.",
+    "Los glaciares están perdiendo tamaño.",
+    "Los árboles absorben dióxido de carbono.",
+    "La deforestación aumenta el cambio climático.",
+    "Las vacas producen metano durante su digestión.",
+    "El metano es un gas de efecto invernadero.",
+    "El cambio climático puede provocar sequías más intensas.",
+    "Algunas regiones están experimentando olas de calor más frecuentes.",
+    "Los arrecifes de coral están amenazados por el calentamiento del océano.",
+    "Los océanos se están volviendo más ácidos.",
+    "El cambio climático afecta a los animales y sus hábitats.",
+    "Algunos animales están cambiando sus lugares de migración.",
+    "Los osos polares dependen del hielo marino para vivir y cazar.",
+    "Los incendios forestales pueden aumentar en condiciones más cálidas y secas.",
+    "Las energías renovables ayudan a reducir las emisiones contaminantes.",
+    "La energía solar utiliza la luz del Sol para producir electricidad.",
+    "La energía eólica utiliza la fuerza del viento.",
+    "El transporte produce emisiones de gases de efecto invernadero.",
+    "Los automóviles eléctricos no producen emisiones por el tubo de escape.",
+    "Reciclar ayuda a reducir la cantidad de residuos.",
+    "La contaminación del aire y el cambio climático están relacionados.",
+    "Las plantas pueden verse afectadas por temperaturas extremas.",
+    "El calentamiento global afecta a los ecosistemas marinos.",
+    "Las temperaturas nocturnas también están aumentando en muchas regiones.",
+    "Las olas de calor pueden afectar la salud de las personas.",
+    "La agricultura puede verse afectada por las sequías.",
+    "Algunas ciudades están creando más espacios verdes para combatir el calor.",
+    "Los manglares ayudan a almacenar dióxido de carbono.",
+    "El permafrost es suelo que permanece congelado durante largos períodos.",
+    "El deshielo del permafrost puede liberar gases de efecto invernadero.",
+    "La Antártida contiene una enorme cantidad de hielo.",
+    "El Ártico se está calentando más rápido que el promedio mundial.",
+    "Los huracanes pueden producir lluvias más intensas en un clima más cálido.",
+    "El cambio climático puede modificar los patrones de lluvia.",
+    "Los bosques ayudan a regular el clima del planeta.",
+    "Ahorrar electricidad puede ayudar a reducir las emisiones.",
+    "Caminar y usar bicicleta reduce las emisiones del transporte.",
+    "La ganadería produce gases de efecto invernadero.",
+    "El cemento es responsable de una parte de las emisiones mundiales de CO2.",
+    "Las temperaturas globales se miden utilizando estaciones y satélites.",
+    "El cambio climático puede afectar la disponibilidad de agua potable.",
+    "Algunas especies de plantas están creciendo en lugares donde antes hacía demasiado frío.",
+    "Los océanos almacenan aproximadamente el 90% del exceso de calor acumulado por el sistema climático.",
+    "El Sol no es el principal responsable del calentamiento global actual.",
+    "Los científicos estudian los anillos de los árboles para conocer climas del pasado.",
+    "Las decisiones humanas pueden ayudar a reducir el cambio climático."
+]
+
+# Lista de consejos
+lista_2 = [
+    "Podrias apagar las luces cuando no se estén utilizando.",
+    "Podrias desconectar los aparatos electrónicos que no necesites.",
+    "Podrias utilizar bombillas LED de bajo consumo.",
+    "Podrias ahorrar agua al bañarte y lavarte los dientes.",
+    "Podrias evitar dejar el aire acondicionado encendido innecesariamente.",
+    "Podrias utilizar menos agua caliente.",
+    "Podrias separar la basura para facilitar el reciclaje.",
+    "Podrias reutilizar bolsas, botellas y recipientes.",
+    "Podrias evitar desperdiciar alimentos.",
+    "Podrias utilizar electrodomésticos eficientes.",
+    "Podrias caminar cuando tu destino esté cerca.",
+    "Podrias utilizar la bicicleta en lugar del automóvil.",
+    "Podrias usar el transporte público.",
+    "Podrias compartir el automóvil con otras personas.",
+    "Podrias evitar viajes innecesarios en automóvil.",
+    "Podrias mantener tu vehículo en buen estado.",
+    "Podrias utilizar vehículos eléctricos cuando sea posible.",
+    "Podrias organizar varios mandados en un solo viaje.",
+    "Podrias compartir viajes con familiares o amigos.",
+    "Podrias promover el uso de ciclovías.",
+    "Podrias comprar productos con menos empaques.",
+    "Podrias evitar los plásticos de un solo uso.",
+    "Podrias comprar solamente lo que necesitas.",
+    "Podrias reparar objetos en lugar de reemplazarlos.",
+    "Podrias comprar productos locales.",
+    "Podrias utilizar botellas reutilizables.",
+    "Podrias llevar bolsas de tela al supermercado.",
+    "Podrias donar la ropa que ya no utilices.",
+    "Podrias comprar productos fabricados con materiales reciclados.",
+    "Podrias evitar tirar basura en las calles.",
+    "Podrias plantar árboles.",
+    "Podrias cuidar las plantas y los espacios verdes.",
+    "Podrias participar en limpiezas de parques y playas.",
+    "Podrias proteger los bosques.",
+    "Podrias evitar provocar incendios forestales.",
+    "Podrias cuidar los animales y sus hábitats.",
+    "Podrias participar en campañas de reforestación.",
+    "Podrias crear un huerto en casa.",
+    "Podrias evitar contaminar ríos, lagos y océanos.",
+    "Podrias proteger las áreas naturales.",
+    "Podrias informarte sobre el cambio climático.",
+    "Podrias enseñar a tus familiares cómo cuidar el planeta.",
+    "Podrias compartir información sobre el medioambiente.",
+    "Podrias participar en proyectos ecológicos escolares.",
+    "Podrias apoyar organizaciones ambientales.",
+    "Podrias promover el reciclaje en tu escuela.",
+    "Podrias apoyar el uso de energías renovables.",
+    "Podrias reducir el consumo de papel.",
+    "Podrias participar en actividades ecológicas comunitarias.",
+    "Podrias animar a otras personas a cuidar el planeta."
+]
+
+
+
+@client.event
+async def on_ready():
+    print("El bot está conectado!")
+    print("Nombre:", client.user)
+
+
+
+@client.command()
+async def Dato_Curioso(ctx):
+    await ctx.send(random.choice(lista_1))
+
+
+
+@client.command()
+async def Ayuda(ctx):
+    await ctx.send(random.choice(lista_2))
+
+
+client.run("TOKEN AQUI")
