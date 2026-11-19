@@ -27,3 +27,11 @@ Esto ayuda porque la gente que use el bot puede ver como ayudar/cuidar el planet
 Programa:
 
 El programa va a ser programado en python con las librerias de discord.
+
+#Commandos:
+
+!Dato_Curioso
+(Este commando va a hacer que el bot the diga un dato curioso de el cambio climatico)
+
+!Ayuda
+(Este commando va a hacer que el bot the diga como ayudar a combatir el cambio climatico)
